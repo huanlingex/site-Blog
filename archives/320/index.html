@@ -9,8 +9,8 @@
     <meta name="keywords" content="Maverick,熊猫小A,Galileo,blog" />
     <meta name="generator" content="Maverick 1.1" />
     <meta name="template" content="Galileo" />
-    <link rel="alternate" type="application/rss+xml" title="無文字 | 三無計劃 &raquo; RSS 2.0" href="https://blog.imalan.cn/feed/index.xml" />
-    <link rel="alternate" type="application/atom+xml" title="無文字 | 三無計劃 &raquo; ATOM 1.0" href="https://blog.imalan.cn/feed/atom/index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="智的博客 &raquo; RSS 2.0" href="https://blog.imalan.cn/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="智的博客 &raquo; ATOM 1.0" href="https://blog.imalan.cn/feed/atom/index.xml" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AlanDecode/site-Blog@gh-pages/assets/galileo-1c8f2638f2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AlanDecode/site-Blog@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AlanDecode/site-Blog@gh-pages/assets/katex.min.css">
@@ -23,17 +23,17 @@
         }
     </script>
     
-<title>Let's talk about Clustering - 無文字 | 三無計劃</title>
+<title>Let's talk about Clustering - 智的博客</title>
 <meta name="author" content="熊猫小A" />
 <meta name="description" content="A brief introduction on traditional clustering algorithms, and a novel new method —— Clustering by fast search and find of density peaks." />
-<meta property="og:title" content="Let's talk about Clustering - 無文字 | 三無計劃" />
+<meta property="og:title" content="Let's talk about Clustering - 智的博客" />
 <meta property="og:description" content="A brief introduction on traditional clustering algorithms, and a novel new method —— Clustering by fast search and find of density peaks." />
-<meta property="og:site_name" content="無文字 | 三無計劃" />
+<meta property="og:site_name" content="智的博客" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.imalan.cn/archives/320/" />
 <meta property="og:image" content="" />
 <meta property="article:published_time" content="2019-04-25T23:54:00-00.00" />
-<meta name="twitter:title" content="Let's talk about Clustering - 無文字 | 三無計劃" />
+<meta name="twitter:title" content="Let's talk about Clustering - 智的博客" />
 <meta name="twitter:description" content="A brief introduction on traditional clustering algorithms, and a novel new method —— Clustering by fast search and find of density peaks." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:image" content="" />
@@ -68,7 +68,7 @@
             <header id="ga-header">
                 <div first>
                     <aside id="ga-brand">
-                        <h1 class="brand"><a class="no-style" href="https://blog.imalan.cn/">無文字 | 三無計劃</a></h1>
+                        <h1 class="brand"><a class="no-style" href="https://blog.imalan.cn/">智的博客</a></h1>
                         <p>只坚持一种正义。我的正义。</p>
                     </aside>
                 </div>
@@ -156,28 +156,28 @@
     <span class="n">distMat</span> <span class="p">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">distMat</span><span class="p">);</span>
 
     <span class="c">% Calc Rho (local density)</span>
-    <span class="n">Rho</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">datasetSize</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span><span class="n"></span>
-<span class="n">    for </span><span class="s">idx = 1:datasetSize(1)</span><span class="p"></span>
+    <span class="n">Rho</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">datasetSize</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">for</span> <span class="s">idx</span> <span class="s">=</span> <span class="s">1:datasetSize(1)</span>
         <span class="n">dists</span> <span class="p">=</span> <span class="n">distMat</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="p">:);</span>
-        <span class="n">Rho</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">dists</span><span class="p">(</span><span class="n">dists</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="n">dists</span> <span class="o">&lt;</span> <span class="n">dc_i</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span><span class="n"></span>
-<span class="n">    end</span>
+        <span class="n">Rho</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">dists</span><span class="p">(</span><span class="n">dists</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="n">dists</span> <span class="o">&lt;</span> <span class="n">dc_i</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">end</span>
 
-<span class="n">    </span><span class="s">% Sort</span><span class="p"></span>
+    <span class="s">%</span> <span class="s">Sort</span>
     <span class="p">[</span><span class="o">~</span><span class="p">,</span> <span class="n">rhoIndex</span><span class="p">]</span> <span class="p">=</span> <span class="n">sort</span><span class="p">(</span><span class="n">Rho</span><span class="p">,</span> <span class="s">&#39;descend&#39;</span><span class="p">);</span>
 
     <span class="c">% Calc Delta (minimum distance between one point </span>
     <span class="c">% and any other point with higher density)</span>
-    <span class="n">Delta</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">datasetSize</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span><span class="n"></span>
-<span class="n">    for </span><span class="s">idx = 1:datasetSize(1)</span><span class="p"></span>
-<span class="n">        if </span><span class="s">idx == 1</span><span class="p"></span>
+    <span class="n">Delta</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">datasetSize</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">for</span> <span class="s">idx</span> <span class="s">=</span> <span class="s">1:datasetSize(1)</span>
+        <span class="n">if</span> <span class="s">idx</span> <span class="s">==</span> <span class="s">1</span>
             <span class="c">% point with highest rho</span>
             <span class="n">index</span> <span class="p">=</span> <span class="n">rhoIndex</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 
             <span class="c">% use highest distance as Delta</span>
             <span class="n">dists</span> <span class="p">=</span> <span class="n">distMat</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">:);</span>
-            <span class="n">Delta</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="p">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dists</span><span class="p">);</span><span class="n"></span>
-<span class="n">        else</span>
-<span class="n">            </span><span class="s">% current point</span><span class="p"></span>
+            <span class="n">Delta</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="p">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dists</span><span class="p">);</span>
+        <span class="n">else</span>
+            <span class="s">%</span> <span class="s">current</span> <span class="s">point</span>
             <span class="n">index</span> <span class="p">=</span> <span class="n">rhoIndex</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 
             <span class="c">% points with higher rho</span>
@@ -189,9 +189,9 @@
             <span class="n">dists</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">sum</span><span class="p">((</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
 
             <span class="c">% minimal distance</span>
-            <span class="n">Delta</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="p">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dists</span><span class="p">);</span><span class="n"></span>
-<span class="n">        end</span>
-<span class="n">    </span><span class="s">end</span><span class="p"></span>
+            <span class="n">Delta</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="p">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dists</span><span class="p">);</span>
+        <span class="n">end</span>
+    <span class="s">end</span>
 
     <span class="c">% Find centers, composite Rho and Delta</span>
     <span class="n">Temp</span> <span class="p">=</span> <span class="n">Rho</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Delta</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
@@ -203,7 +203,7 @@
     <span class="c">% Return</span>
     <span class="n">Rho_o</span> <span class="p">=</span> <span class="n">Rho</span><span class="p">;</span>
     <span class="n">Delta_o</span> <span class="p">=</span> <span class="n">Delta</span><span class="p">;</span>
-    <span class="n">centers_o</span> <span class="p">=</span> <span class="n">centers</span><span class="p">;</span><span class="n"></span>
+    <span class="n">centers_o</span> <span class="p">=</span> <span class="n">centers</span><span class="p">;</span>
 <span class="n">end</span>
 </pre></div>
 <p>You can see the core part contains less than 50 lines of code, it is so concise that I even doubted myself. But the result reassured me：</p>
@@ -259,7 +259,7 @@
                 <footer class="ga-mono" id="ga-footer">
                     <section>
                         <span id="ga-uptime"></span>
-                        <span class="brand">無文字 | 三無計劃</span>
+                        <span class="brand">智的博客</span>
                     </section>
                     <section>
                         <p class="copyright">
