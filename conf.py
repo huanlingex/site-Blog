@@ -21,7 +21,7 @@ category_by_folder = True
 for_manual_build_trigger = 2
 
 # 站点设置
-site_name = "無文字 | 三無計劃"
+site_name = "智的博客"
 site_logo = "${static_prefix}android-chrome-512x512.png"
 site_build_date = "2017-06-29T12:00+08:00"
 author = "熊猫小A"
